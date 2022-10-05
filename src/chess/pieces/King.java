@@ -9,13 +9,15 @@ public class King extends ChessPiece {
     public King(Board board, Color color) {
         super(board, color);
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "K";
     }
 
     @Override
     public boolean[][] possibleMoves() {
-        return new boolean[0][];
+        boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+        return mat;
     }
 }
