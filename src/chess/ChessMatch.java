@@ -18,10 +18,11 @@ public class ChessMatch {
         initialSetup();
     }
 
-    public int getTurn(){
+    public int getTurn() {
         return turn;
     }
-    public Color getCurrentPlayer(){
+
+    public Color getCurrentPlayer() {
         return currentPlayer;
     }
 
@@ -71,6 +72,11 @@ public class ChessMatch {
         if (!board.piece(source).possibleMove(target)) {
             throw new ChessException("The chosen piece can't move to target position");
         }
+    }
+
+    private void nextTurn() {
+        turn++;
+        currentPlayer = (currentPlayer == Color.WHITE) ? Color.BLACK : Color.WHITE;
     }
 
     private void placeNewPiece(char column, int row, ChessPiece piece) {
