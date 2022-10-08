@@ -70,8 +70,11 @@ public class ChessMatch {
             throw new ChessException("You can't put yourself in check");
         }
         check = (testCheck(opponent(currentPlayer))) ? true : false;
-
-        nextTurn();
+        if (testCheckMate(opponent(currentPlayer))) {
+            checkMate = true;
+        } else {
+            nextTurn();
+        }
         return (ChessPiece) capturedPiece;
     }
 
