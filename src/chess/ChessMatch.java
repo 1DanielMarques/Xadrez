@@ -117,14 +117,17 @@ public class ChessMatch {
         Piece p = board.removePiece(pos);
         piecesOnTheBoard.remove(p);
 
-
+        ChessPiece newPiece = newPiece(type, promoted.getColor());
+        board.placePiece(newPiece, pos);
+        piecesOnTheBoard.add(newPiece);
+        return newPiece;
     }
 
-    private ChessPiece newPiece(String type,Color color){
-        if(type.equals("B")) return new Bishop(board,color);
-        if(type.equals("N")) return new Knight(board,color);
-        if(type.equals("Q")) return new Queen(board,color);
-        return new Rook(board,color);
+    private ChessPiece newPiece(String type, Color color) {
+        if (type.equals("B")) return new Bishop(board, color);
+        if (type.equals("N")) return new Knight(board, color);
+        if (type.equals("Q")) return new Queen(board, color);
+        return new Rook(board, color);
 
     }
 
