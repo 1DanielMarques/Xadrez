@@ -18,6 +18,7 @@ public class ChessMatch {
     private List<Piece> piecesOnTheBoard = new ArrayList<>();
     private List<Piece> capturedPieces = new ArrayList<>();
     private ChessPiece enPassantVulnerable;
+    private ChessPiece promoted;
 
     public ChessMatch() {
         board = new Board(8, 8);
@@ -44,6 +45,10 @@ public class ChessMatch {
 
     public ChessPiece getEnPassantVulnerable() {
         return enPassantVulnerable;
+    }
+
+    public ChessPiece getPromoted() {
+        return promoted;
     }
 
     public ChessPiece[][] getPieces() {
